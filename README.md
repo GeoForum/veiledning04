@@ -38,7 +38,7 @@ Klikk på "Map view" over tabellen:
 
 ![bilde](img/c02a.png)
 
-Det vises nå et kart med samtlige punkter vist på en gang - dette er ganske uoversiktlig, og man ser at CartoDB sliter med at vise så mye data samtidig:
+Det vises nå et kart med samtlige punkter vist på en gang - dette er ganske uoversiktlig, og man ser at CartoDB sliter med å vise så mye data samtidig:
 
 ![bilde](img/350_c03a.png)
 
@@ -52,13 +52,23 @@ Klikk på "Wizard" og "Torque" for å få til et animert. Du vil nå se et kart 
 
 ![bilde](img/700_c05c.png)
 
-Feltet "Time Column" viser, at det i øyeblikket animeres etter verdiene i kolonnen cartodb_id - det gir ikke mening, siden den inneholder en tilfeldig unik id for hver rekke. 
+Feltet "Time Column" viser, at det i øyeblikket animeres etter verdiene i kolonnen cartodb_id - det gir ikke mening, siden den inneholder en tilfeldig unik id for hver rekke. Kolonnen "date_time_utc" inneholder tidsstempel men i feil format - det kan konverteres til postgresql tidsformat med dette uttryk:
+
+```sql
+SELECT *, 
+to_timestamp(date_time_utc::text,'YYYYMMDDHH24MISS') datokolonne 
+FROM ais_20130829
+```
+Sett deretter "datokolonne" som tidskolonne. Hvis man ønsker å optimere performance, er det bedre bruke en annen metode enn SELECT - fx lage en ny kolonne og bruke update - eller lage et view som indekseres.
+
+### Kartografi
 
 En rekke andre parametre er satt fra start og kan endres - prøv fx å endre:
 * Marker fill 
   * størrelse - fx 3 istedet for 6
   * farge - fx #FF5C00
   * opacity - fx 0.7 i stedet for 0.9
+* Marker stroke - fx 0 i stedet for 1.5.
 * Duration - 15 sekund i stedet for 30.
 * Steps - 128 i stedet for 528
 * Trails - fx 6 i stedet for 3
@@ -68,6 +78,8 @@ En rekke andre parametre er satt fra start og kan endres - prøv fx å endre:
 Prøv også å endre bakgrunnskartet til fx "World Midnight Commander":
 
 ![bilde](img/c05f.png)
+
+### Del kartet
 
 Når du er fornøyd med resultatet, er du klar til å dele kartet. Klikk på "Visualize" øverst til høyre:
 
