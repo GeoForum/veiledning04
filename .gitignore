@@ -30,3 +30,5 @@ node_modules
 data/*
 !data/ais_20130829.geojson.zip
 !data/data01.sql
+img/mogrify
+img/src
