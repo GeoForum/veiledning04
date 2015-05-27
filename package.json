@@ -1,0 +1,24 @@
+{
+  "name": "veiledning03",
+  "version": "1.0.0",
+  "description": "Veiledning 3",
+  "main": "srv.js",
+  "dependencies": {
+    "connect": "^3.3.5",
+    "serve-static": "^1.9.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node srv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GeoForum/veiledning03"
+  },
+  "author": "Jonas Ellehauge - ellevator.net",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/GeoForum/veiledning03/issues"
+  },
+  "homepage": "https://github.com/GeoForum/veiledning03"
+}
