@@ -2,11 +2,15 @@
 
 ## Animert kart med AIS data
 
-Vi skal lage et animert kar med tidsskala som viser bevegelser av skip i Oslo-fjorden basert på AIS-data fra området.
+Vi skal lage et animert kart med tidsskala som viser bevegelser av skip i Oslo-fjorden basert på AIS-data fra området.
 
 Du kan hente [filene til denne veiledning på github](https://github.com/GeoForum/veiledning04) - eller du kan bygge strukturen opp selv.
 
 Se dette eksemplet som <a href="http://geoforum.github.io/veiledning04/" target="_blank">live demo på github pages</a>. Følge evt [denne instruks](testserver.md) hvis du vil sette opp lokal test-server.
+
+Denne veiledning er basert på dette eksempel:
+http://153.44.6.24/animation/OsloAnimation.html
+Eksemplet er laget av Ola Brandt i Kystverket (ola.brandt at kystverket.no).
 
 ## CartoDB
 
